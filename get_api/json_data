@@ -1,0 +1,48 @@
+{
+    "error_code": 0,
+    "error_message": "",
+    "response": [
+        {
+            "id": 401,
+            "name": "张氢_connie",
+            "code": "E002",
+            "position": "顾问",
+            "mobile": "13501618793",
+            "gender": 1,
+            "email": "connie.zhang@analyticservice.net",
+            "entry_at": "2016-01-01T00:00:00Z",
+            "leaved_at": null,
+            "job_status": 0,
+            "departments": [
+                {
+                    "id": 7,
+                    "wechat_id": 21,
+                    "name": "Deliver_Auto",
+                    "parent_id": 3,
+                    "level": 3,
+                    "leader_id": 403,
+                    "parent": {
+                        "id": 3,
+                        "wechat_id": 41,
+                        "name": "上海音智达",
+                        "parent_id": 1,
+                        "level": 2,
+                        "leader_id": 655
+                    },
+                    "leader": {
+                        "id": 403,
+                        "name": "朱玉峰_Jeff",
+                        "code": "E010",
+                        "position": "PE",
+                        "mobile": "18621080094",
+                        "gender": 1,
+                        "email": "jeff.zhu@analyticservice.net",
+                        "entry_at": "2016-01-01T00:00:00Z",
+                        "leaved_at": null,
+                        "job_status": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

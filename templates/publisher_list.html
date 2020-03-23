@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="jquery-3.4.1.js">
+</head>
+<body>
+<a href="/add_publisher/">添加出版社</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>id</th>
+        <th>出版社名称</th>
+        <th>操作</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for publisher in publisher_list %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <th>{{ publisher.id  }}</th>
+            <th>{{ publisher.name }}</th>
+            <th ><a href="/delete_publisher/?id={{publisher.id  }}">删除</a>
+                <a href="/update_publisher/?id={{publisher.id  }}">修改</a>
+                </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script src="jquery-3.4.1.js"></script>
+<script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+</body>
+</html>

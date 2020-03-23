@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form method="post"  action=""><!--为什么为空 当前提交的接口和网页接口一致的话-->
+    <select name="publisher">
+        {% for publisher in publisher_list %}
+            {% if publisher == book_obj.publisher %}
+                <option selected value="{{ publisher.id }}">{{ publisher.name }}</option>
+            {% else %}
+                <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <input type="text" name="title" value="{{ book_obj.title }}">
+    <button type="submit">submit</button>
+</form>
+
+</body>
+</html>

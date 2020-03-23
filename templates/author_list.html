@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/jquery-3.4.1.js">
+</head>
+<body>
+<a href="/add_author/">添加新作者 </a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>id</th>
+        <th>作者名称</th>
+        <th>年龄</th>
+
+        <th>书籍名称</th>
+        <th>操作</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for author in author_list %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <th>{{ author.id }}</th>
+            <th>{{ author.name }}</th>
+            <th>{{ author.age }}</th>
+
+            <th>
+                {% for book in  author.book.all %}
+                    {% if forloop.last %}
+                        {{ book.title }}
+                    {% else %}
+                        {{ book.title }} ,
+                    {% endif %}
+                {% empty %}
+                    暂无作品
+                {% endfor %}
+            </th>
+            <th><a href="/delete_author/?id={{ author.id }}">删除</a>
+                <a href="/update_author/?id={{ author.id }}">修改</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
+</body>
+
+
+</html>

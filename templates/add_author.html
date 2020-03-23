@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="jquery-3.4.1.js">
+</head>
+<body>
+<form action="/add_author/" method="post">
+    <input type="text" name = 'author_name'>
+    <input type="text" name = 'author_age'>
+    <select name = 'book' id = 'book' multiple >
+        {% for book in book_list %}
+            <option value="{{ book.id }}" >{{ book.title }}</option>
+        {%  endfor %}
+    </select>
+
+    <input type="submit">
+</form>
+<script src="jquery-3.4.1.js"></script>
+<script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+</body>
+</html>
